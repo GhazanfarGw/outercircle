@@ -38,11 +38,11 @@ export default function Dashboard() {
               </p>
             </div>
             <div className="flex items-center md:gap-x-5 md:mt-16 pt-8 md:pt-0">
-              <button className="flex bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-8 px-6 md:py-4 py-2 text-white text-sm font-semibold mr-4">
+              <button className="flex bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-8 px-4 md:py-4 py-2 text-white text-sm font-semibold mr-4">
                 <PlayButton />
                 <span className="ml-2">Get Started</span>
               </button>
-              <button className="flex items-center border-[#1790E8] border text-white md:px-8 px-4 md:py-4 py-2 rounded-r-lg">
+              <button className="flex items-center border-[#1790E8] border text-white md:px-8 px-3 md:py-4 py-2 rounded-r-lg">
                 <span className="ml-2">Login Account</span>
               </button>
             </div>
