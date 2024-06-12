@@ -127,7 +127,7 @@ const CustomCarousel = () => {
   };
 
   return (
-    <div className="max-w-screen-2xl justify-center text-center mx-auto">
+    <div className="max-w-screen-2xl justify-center text-center mx-auto overflow-hidden">
         <div className='mx-auto items-center md:px-10 px-5 md:py-20 py-0'>
             <div className='justify-center mx-auto text-center max-w-screen-md'>
                 <h1 className='md:text-5xl text-3xl font-semibold'>
