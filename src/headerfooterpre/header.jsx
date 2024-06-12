@@ -105,7 +105,7 @@ function Logo({ isScrolled }) {
                 </div>
             </div>
             {/* Mobile nav */}
-            <ul className={`md:hidden overflow-x-hidden bg-[#fff] fixed w-full overflow-y-visible bottom-0 top-20 mt-2 border-t duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
+            <ul className={`md:hidden overflow-x-hidden bg-[#fff] fixed w-full overflow-y-visible bottom-0 top-16 mt-3 border-t duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
                 <li>
                   <Link to="/" className={`tracking-wider hover:bg-[#f1f1f1] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#403f68] border-[#403f68] border-opacity-10 text-sm font-semibold ${location.pathname === '/' ? 'text-[#000] border-b-4 border-[#1790E8]' : 'text-[#000]'}`}>
                     Home
@@ -154,7 +154,7 @@ function Logo({ isScrolled }) {
                     <div className="z-30 flex-shrink-0 pb-2 pt-5 md:pt-0  items-center duration-500">
                             <a href="/">
                                 <img width={110} className='hidden md:block lg:block items-center duration-500' src='./outercircle.png' alt='Logo'/>
-                                <img width={100} className='block md:hidden lg:hidden items-center duration-500' src='./outercircle.png' alt='Logo'/>
+                                <img width={100} className='block md:hidden lg:hidden items-center duration-500' src='./blacklogo.png' alt='Logo'/>
                             </a>
                         </div>
                         <div className="z-20 text-3xl md:hidden pt-5 px-3 text-white" onClick={() => setOpen(!open)}>
@@ -213,42 +213,42 @@ function Logo({ isScrolled }) {
                 </div>
             </div>
             {/* Mobile nav */}
-            <ul className={`md:hidden overflow-x-hidden bg-[#fff] fixed w-full overflow-y-visible bottom-0 top-20 mt-2 border-t duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
+            <ul className={`md:hidden overflow-x-hidden bg-[#000000] fixed w-full overflow-y-visible bottom-0 py-32 mt-2 border-t duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
                 <li>
-                  <Link to="/" className={`tracking-wider hover:bg-[#f1f1f1] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#403f68] border-[#403f68] border-opacity-10 text-sm font-semibold ${location.pathname === '/' ? 'text-[#000] border-b-4 border-[#1790E8]' : 'text-[#000]'}`}>
+                  <Link to="/" className={`tracking-wider hover:bg-[#fff] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#dfdfdf] border-[#fff] border-opacity-10 text-sm font-semibold ${location.pathname === '/' ? 'text-[#1790E9] border-b-4 border-[#fff] tracking-wider' : 'text-[#fff]'}`}>
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/students" className={`tracking-wider hover:bg-[#f1f1f1] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#403f68] border-[#403f68] border-opacity-10 text-sm font-semibold ${location.pathname === '/students' ? 'text-[#000] border-b-4 border-[#1790E8]' : 'text-[#000]'}`}>
+                  <Link to="/students" className={`tracking-wider hover:bg-[#fff] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#dfdfdf] border-[#fff] border-opacity-10 text-sm font-semibold ${location.pathname === '/students' ? 'text-[#1790E9] border-b-4 border-[#fff] tracking-wider' : 'text-[#fff]'}`}>
                     Students
                   </Link>
                 </li>
                 <li>
-                  <Link to="/schools" className={`tracking-wider hover:bg-[#f1f1f1] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#403f68] border-[#403f68] border-opacity-10 text-sm font-semibold ${location.pathname === '/schools' ? 'text-[#000] border-b-4 border-[#1790E8]' : 'text-[#000]'}`}>
+                  <Link to="/schools" className={`tracking-wider hover:bg-[#fff] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#dfdfdf] border-[#fff] border-opacity-10 text-sm font-semibold ${location.pathname === '/schools' ? 'text-[#1790E9] border-b-4 border-[#fff] tracking-wider' : 'text-[#000]'}`}>
                     Schools
                   </Link>
                 </li>
                 <li>
-                  <Link to="/employers" className={`tracking-wider hover:bg-[#f1f1f1] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#403f68] border-[#403f68] border-opacity-10 text-sm font-semibold ${location.pathname === '/employers' ? 'text-[#000] border-b-4 border-[#1790E8]' : 'text-[#000]'}`}>
+                  <Link to="/employers" className={`tracking-wider hover:bg-[#fff] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#dfdfdf] border-[#fff] border-opacity-10 text-sm font-semibold ${location.pathname === '/employers' ? 'text-[#1790E9] border-b-4 border-[#fff] tracking-wider' : 'text-[#000]'}`}>
                     Employers
                   </Link>
                 </li>
                 <li>
-                  <Link to="/grassroots" className={`tracking-wider hover:bg-[#f1f1f1] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#403f68] border-[#403f68] border-opacity-10 text-sm font-semibold ${location.pathname === '/grassroots' ? 'text-[#000] border-b-4 border-[#1790E8]' : 'text-[#000]'}`}>
+                  <Link to="/grassroots" className={`tracking-wider hover:bg-[#fff] px-8 py-3 flex flex-row items-center duration-200 border-b hover:text-[#1790E8] text-[#dfdfdf] border-[#fff] border-opacity-10 text-sm font-semibold ${location.pathname === '/grassroots' ? 'text-[#1790E9] border-b-4 border-[#fff] tracking-wider' : 'text-[#000]'}`}>
                     Grassroots
                   </Link>
                 </li>
-                <p className='text-sm px-8 text-[#403f68] pt-8'>
+                <p className='text-sm px-8 text-[#dfdfdf] pt-8'>
                     Start your learning journey today with our next generation of Apprentices.
                 </p>
                 <li> 
-                  <Link to="/contact-us" className="hover:bg-[#1790E8] border border-[#1790E8] items-center relative h-10 mt-8 tracking-wider duration-200 mx-10 justify-center flex rounded-sm">
+                  <Link to="/contact-us" className="hover:bg-[#1790E8] text-[#dfdfdf] border border-[#1790E8] items-center relative h-10 mt-8 tracking-wider duration-200 mx-10 justify-center flex rounded-sm">
                     Contact Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/register" className="hover:bg-[#1790E8] border border-[#1790E8] items-center relative h-10 mt-8 tracking-wider duration-200 mx-10 justify-center flex rounded-sm">
+                  <Link to="/register" className="hover:bg-[#1790E8] text-[#dfdfdf] border border-[#1790E8] items-center relative h-10 mt-8 tracking-wider duration-200 mx-10 justify-center flex rounded-sm">
                     Join the Communty
                   </Link>
                 </li>
@@ -258,9 +258,6 @@ function Logo({ isScrolled }) {
     </>
   )};
 export default Navbar;
-
-
-
 
 
 // import React, { useEffect, useState } from 'react';
