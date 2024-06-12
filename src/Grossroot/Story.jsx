@@ -12,9 +12,7 @@ export default function Story() {
                 </h1>
             </div>
             <div className='mx-auto md:mt-20 justify-center lg:max-w-6xl md:w-full md:border-4 border-2 border-[#1790E8] my-10'>
-                <video muted autoPlay loop controls playsInline width={1200} height={480}> 
-                    <source src='./' type='video/mp4'/>
-                </video>
+                <img src='./Inperson event middle circle image.png' alt='image'/>
             </div>
         </div>
     </div>
