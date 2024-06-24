@@ -9,7 +9,7 @@ const Footer = () => {
                 </p>
                 <div className="py-2 md:px-0 px-2 w-52">
                     <a href="/">
-                        <img src='./outercircle.png' className='w-32' alt='favicon.png'/>
+                        <img src='./outercircle.png' className='md:w-28 w-24 pl-3' alt='favicon.png'/>
                     </a>
                 </div>
                 <div className='md:grid md:grid-cols-5 md:gap-16 max-w-screen-2xl mx-auto justify-center py-5 text-white px-7'>
@@ -54,7 +54,7 @@ const Footer = () => {
                         <h1 className='text-white text-base justify-center font-bold'>
                             Community
                         </h1>
-                        <div className="flex grid-cols-4 lg:gap-x-4 md:gap-x-3 pt-5">
+                        <div className="flex grid-cols-4 lg:gap-x-4 md:gap-x-3 gap-x-5 pt-5">
                             <a 
                                 target="_black" href="https://www.linkedin.com/company/0utercircle?trk=feed_main-feed-card_feed-actor-image" 
                                 className="hover:text-[#1790E8] text-white
