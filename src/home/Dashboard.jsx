@@ -27,12 +27,19 @@ export default function Dashboard() {
           </div>
           <div className='text-white md:px-10'>
             <div className='lg:pt-24 pt-0'>
-              <h2 className='second lg:text-6xl md:text-5xl text-xl tracking-wider duration-500'>
+              <h2 className='hidden md:block lg:block second lg:text-6xl md:text-5xl text-xl tracking-wider duration-500'>
                 Welcome To
-                <span className='third pl-5 font-semibold lg:text-7xl md:text-6xl text-5xl text-white'>
+                <span className='hidden md:block lg:block third pl-5 font-semibold lg:text-7xl md:text-6xl text-5xl text-white'>
                   OuterCircle
                 </span>
               </h2>
+              <h2 className='block md:hidden lg:hidden second lg:text-6xl md:text-5xl text-xl tracking-wider duration-500'>
+                Welcome To
+              </h2>
+              <h1 className='block md:hidden lg:hidden third font-semibold lg:text-7xl md:text-6xl text-5xl text-white'>
+                  OuterCircle
+              </h1>
+
               <p className='fourth md:pt-10 pt-3 md:text-2xl text-base text-white md:max-w-screen-sm'>
                 Empowering the growth & support of the current & next generation of Apprentices 
               </p>
