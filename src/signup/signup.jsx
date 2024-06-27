@@ -10,43 +10,24 @@ const Register = () => {
   const [step, setStep] = useState(0);
   const [error, setError] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const [picture, setPicture] = useState(null);
-  const [fullname, setFullname] = useState('');
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [email, setEmail] = useState ('');
   const [phoneno, setPhoneno] = useState ('');
   const [dbirth, setDbirth] = useState (null);
   const [gender, setGender] = useState ('');
   const [ethnicity, setEthnicity] = useState ('');
   const [loading, setLoading] = useState(false);
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0);
+};
+  
+  const handleFirstNameChange = (event) => {
+    setFirstName(event.target.value);
+  };
 
-  const handlePictureUpload = (event) => {
-    const file = event.target.files[0];
-  
-    if (!file) {
-      console.log("No file selected.");
-      return;
-    }
-  
-    if (window.FileReader) {
-      const reader = new FileReader();
-  
-      reader.onload = () => {
-        console.log(reader.result);
-        setPicture(reader.result);
-      };
-  
-      reader.onerror = (error) => {
-        console.log("Error occurred while reading the file.");
-      };
-  
-      reader.readAsDataURL (file);
-    } else {
-      console.log("FileReader is not supported in this browser.");
-    }
-  };  
-  
-  const handleFullnameChange = (event) => {
-    setFullname(event.target.value);
+  const handleLastNameChange = (event) => {
+    setLastName(event.target.value);
   };
 
   const handlePhonenoChange = (event) => {
@@ -115,10 +96,17 @@ const Register = () => {
   const [applied, setApplied] = useState('');
   const [details, setDetails] = useState('');
   const [challenges, setChallenges] = useState({
-    lackOfInformation: false,
-    applicationProcess: false,
-    interviewPreparation: false,
-    findingOpportunities: false,
+    lackOfUnderstanding: false,
+    difficultyFinding: false,
+    lackOfSupport: false,
+    Uncertainty: false,
+    challengesInPreparing: false,
+    accessibilityIssues: false,
+    highCompetition: false,
+    lackOfPrior: false,
+    difficultyInStanding: false,
+    assessmentCentreStage: false,
+    interviewStage: false,
     other: false,
   });
   const [otherDetails, setOtherDetails] = useState('');
@@ -141,11 +129,6 @@ const handleRatingChange = (event) => {
       [event.target.name]: event.target.checked,
     });
   };
-
-  const handleOtherDetailsChange = (event) => {
-    setOtherDetails(event.target.value);
-  };
-
 
   // Step 4 Interests and Goals*
   const [apprenticeshipTypes, setApprenticeshipTypes] = useState({
@@ -179,8 +162,8 @@ const handleRatingChange = (event) => {
 
   const [resources, setResources] = useState({
     cvWriting: false,
-    interviewPreparation: false,
-    findingOpportunities: false,
+    lackOfSupport: false,
+    Uncertainty: false,
     networking: false,
     workshops: false,
     mentorship: false,
@@ -241,7 +224,7 @@ const handleRatingChange = (event) => {
   const handleNext = () => {
     switch (step) {
       case 0:
-        if (!picture || !fullname || !email || !phoneno || !gender || !dbirth || !ethnicity) {
+        if (!firstname || !lastname || !email || !phoneno || !gender || !dbirth || !ethnicity) {
           setErrorMessage('Please fill in all the fields');
           return;
         }
@@ -299,7 +282,7 @@ const handleRatingChange = (event) => {
     setLoading(true);
   
     // Store input data in local storage
-    const inputData = { picture, fullname, gender, dbirth, phoneno, email, ethnicity, schoolcollege, year, field, qualifications, applied, details, rating, challenges, apprenticeshipTypes, careerGoals, skills, resources, resourceDetails, support, heardAbout, participateEvents, suggestions, consent, subscribe };
+    const inputData = {firstname, lastname, gender, dbirth, phoneno, email, ethnicity, schoolcollege, year, field, qualifications, applied, details, rating, challenges, apprenticeshipTypes, careerGoals, skills, resources, resourceDetails, support, heardAbout, participateEvents, suggestions, consent, subscribe };
     localStorage.setItem('inputData', JSON.stringify(inputData));
   
     try {
@@ -346,17 +329,10 @@ const handleRatingChange = (event) => {
         <form onSubmit={handleSubmit} className="md:col-span-2 md:ml-[300px] lg:ml-[400px] xl:ml-[500px] md:w-[75%] mx-auto w-[90%]">
           {step === 0 && (
             <div>
-              <div className="mt-10">
-                <p className=" font-semibold">Personal Picture</p>
-                <p className="text-gray-400 text-sm py-4 md:w-1/2 md:mt-5">
-                  Please upload picture of dimension 200 x 200 px Personal picture Size
-                  must be from 5 to 100 Kb Allowed picture file types are .jpg,
-                  .jpeg, .png, .gif, .bmp Photo Specifications
-                </p>
-                <div style={{ width: 'auto' }}>
-                  <input type="file" accept="image/*" required onChange={handlePictureUpload} />
-                  {picture == "" || picture == null ? "": <img className="pt-10 w-44" src={picture}/>}
-                </div>
+              <div>
+                <h1 className="md:text-3xl max-w-lg text-xl pt-14 md:pt-0">
+                  OuterCircle Aspiring Apprentice Member Sign-Up Form
+                </h1>
               </div>
               <div className="mt-10">
                 <label className="text-[#1790E8] font-medium ">
@@ -365,9 +341,23 @@ const handleRatingChange = (event) => {
                 <br />
                 <input
                   type="text"
-                  value={fullname}
+                  value={firstname}
                   required
-                  onChange={handleFullnameChange}
+                  onChange={handleFirstNameChange}
+                  placeholder="First Name or Given Name (English)"
+                  className="mt-3 border-[1px]  border-gray-400 px-3 py-3 w-[100%] placeholder-gray-400"
+                />
+              </div>
+              <div className="mt-10">
+                <label className="text-[#1790E8] font-medium ">
+                  Last Name or Given Name (English)*
+                </label> 
+                <br />
+                <input
+                  type="text"
+                  value={lastname}
+                  required
+                  onChange={handleLastNameChange}
                   placeholder="First Name or Given Name (English)"
                   className="mt-3 border-[1px]  border-gray-400 px-3 py-3 w-[100%] placeholder-gray-400"
                 />
@@ -385,6 +375,9 @@ const handleRatingChange = (event) => {
                   />
               </div>
               <div className="mt-10">
+              <label className="text-[#1790E8] font-medium ">
+                  Phone Number *
+                </label>
                 <input
                   type="number"
                   value={phoneno}
@@ -395,7 +388,7 @@ const handleRatingChange = (event) => {
                 />
               </div>
               <div className="mt-10">
-                <label className="text-[#1790E8] font-medium ">
+                <label className="text-[#1790E8] font-medium">
                   Date of Birth*
                 </label>
                 <br />
@@ -403,12 +396,12 @@ const handleRatingChange = (event) => {
                   selected={dbirth}
                   required
                   onChange={handleDbirthChange}
+                  dateFormat="dd/MM/yyyy"
                   className="mt-3 border-[1px] border-gray-400 py-3 px-4 w-[21rem] md:w-[56.5rem] md:px-4 placeholder-gray-400"
                 />
                 {error && <p className="text-red-500 text-sm pt-3">{error}</p>}
                 <p className="text-[12px] mt-2 text-gray-400">
-                  Click on the title of the popup window to scroll multiple
-                  months/years at a time
+                  Click on the title of the popup window to scroll multiple months/years at a time
                 </p>
               </div>
               <div className="mt-10 ">
@@ -436,23 +429,26 @@ const handleRatingChange = (event) => {
                   required 
                   className="border-[1px] border-gray-400 px-3 w-[100%] py-3 mt-5 placeholder-gray-400">
                   <option value="" disabled>Select</option>
-                  <option value="Male">White</option>
-                  <option value="Female">Black or African American</option>
-                  <option value="Non binary">Hispanic or Latino</option>
-                  <option value="Prefer not to say">Asian or Pacific Islander</option>
-                  <option value="Prefer not to say">Native American or Alaskan Native</option>
-                  <option value="Prefer not to say">Middle Eastern</option>
-                  <option value="Prefer not to say">Other</option>
-                  <option value="Prefer not to say">Prefer not to say</option>
+                  <option value="White_Western Europe">White (Western Europe)</option>
+                  <option value="White_Eastern Europe">White (Eastern Europe)</option>
+                  <option value="Black, Black Britsh, Carribean or African">Black, Black Britsh, Carribean or African</option>
+                  <option value="South Asian">South Asian</option>
+                  <option value="Middle Eastern">Middle Eastern</option>
+                  <option value="East Asian">East Asian</option>
+                  <option value="Middle Eastern">Middle Eastern</option>
+                  <option value="Mixed or Multiple ethnic groups">Mixed or Multiple ethnic groups</option>
+                  <option value="Other Ethnic Group">Other Ethnic Group</option>
                 </select>
               </div>
               {/* Display error message */}
               {errorMessage && <p>{errorMessage}</p>}
-              <button 
-                className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
-                variant="primary" onClick={handleNext}>
-                Next
-              </button>
+              <div onClick={handleScrollToTop}>
+                <button 
+                  className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                  variant="primary" onClick={handleNext}>
+                  Next
+                </button>
+              </div>
             </div>
           )}
 
@@ -483,22 +479,11 @@ const handleRatingChange = (event) => {
                   onChange={handleYearChange} 
                   className="border-[1px]  border-gray-400 px-3 w-[100%] py-3 mt-3 placeholder-gray-400 ">
                   <option value="" disabled>Select</option>
+                  <option value="year 9">Year 9</option>
                   <option value="year 10">Year 10</option>
                   <option value="year 11">Year 11</option>
                   <option value="year 12">Year 12</option>
                   <option value="year 13">Year 13</option>
-                  <option value="year 14">Year 14</option>
-                  <option value="year 15">Year 15</option>
-                  <option value="year 16">Year 16</option>
-                  <option value="year 17">Year 17</option>
-                  <option value="year 18">Year 18</option>
-                  <option value="year 19">Year 19</option>
-                  <option value="year 20">Year 20</option>
-                  <option value="year 21">Year 21</option>
-                  <option value="year 22">Year 22</option>
-                  <option value="year 23">Year 23</option>
-                  <option value="year 24">Year 24</option>
-                  <option value="year 25">Year 25</option>
                 </select>
               </div>
 
@@ -511,13 +496,15 @@ const handleRatingChange = (event) => {
                   onChange={handleFieldChange} 
                   className="border-[1px]  border-gray-400 px-3 w-[100%] py-3 mt-3 placeholder-gray-400 ">
                   <option value="" disabled>Select</option>
-                  <option value="IT and Technology">IT and Technology</option>
-                  <option value="Engineering">Engineering</option>
-                  <option value="Business and Administration">Business and Administration</option> 
-                  <option value="Health and Social Care">Health and Social Care</option>
-                  <option value="Creative and Media">Creative and Media</option>
-                  <option value="Construction">Construction</option>
-                  <option value="Other">Other</option>  
+                  <option value="Technology">Technology</option>
+                  <option value="Engineering_Manufacturing">Engineering & Manufacturing</option>
+                  <option value="Health_Science">Health & Science</option> 
+                  <option value="Legal">Legal</option>
+                  <option value="Finance_Accounting">Finance & Accounting</option>
+                  <option value="Sales_Procurement">Sales & Procurement</option>
+                  <option value="Digital_Marketing">Digital Marketing</option>
+                  <option value="Not_quite_sure!">Not quite sure!</option>
+                  <option value="other">Other</option>     
                 </select>
               </div>
               <div className="mt-5">
@@ -572,11 +559,13 @@ const handleRatingChange = (event) => {
                 <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
                   Previous
                 </button>{" "}
-                <button 
-                  className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
-                  variant="primary" onClick={handleNext}>
-                  Next
-                </button>
+                <div onClick={handleScrollToTop}>
+                  <button 
+                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                    variant="primary" onClick={handleNext}>
+                    Next
+                  </button>
+                </div>
               </div>
             </div>
           )}
@@ -595,11 +584,11 @@ const handleRatingChange = (event) => {
                   onChange={handleRatingChange} 
                   className="border-[1px]  border-gray-400 px-3 w-[100%] py-3 mt-3 placeholder-gray-400 ">
                   <option value="" disabled>Rating Scale</option>
-                  <option value="year 10">1</option>
-                  <option value="year 11">2</option>
-                  <option value="year 11">3</option>
-                  <option value="year 11">4</option>
-                  <option value="year 11">5</option>
+                  <option value="1">You have very limited or no knowledge about apprenticeships.</option>
+                  <option value="2">You have a basic understanding of apprenticeships.</option>
+                  <option value="3">You understand the basic application requirements and process.</option>
+                  <option value="4">You can understand the detailed application process and career benefits.</option>
+                  <option value="5">You have extensive knowledge and experience with apprenticeships.</option>
                 </select>
               </div>
               <div className="mt-10">
@@ -628,61 +617,107 @@ const handleRatingChange = (event) => {
                 )}
               </div>
               <div className="mt-10">
-                <label className="text-[#1790E8] font-medium">What are your main challenges in understanding apprenticeships?</label>
+                <label className="text-[#1790E8] font-medium">What are your main challenges in understanding/getting into an apprenticeship?</label>
                 <div className="mt-3">
                   <label className="block">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
-                      name="lackOfInformation" 
-                      checked={challenges.lackOfInformation}
+                      name="LackOfUnderstanding" 
+                      checked={challenges.lackOfUnderstanding}
                       onChange={handleChallengesChange}
                     />
-                    Lack of information
+                    Lack of understanding about available apprenticeship opportunities
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
-                      name="applicationProcess" 
-                      checked={challenges.applicationProcess}
+                      name="difficultyFinding" 
+                      checked={challenges.difficultyFinding}
                       onChange={handleChallengesChange}
                     />
-                    Application process
+                    Difficulty finding reliable sources for guidance and mentorship.
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
-                      name="interviewPreparation" 
-                      checked={challenges.interviewPreparation}
+                      name="lackOfSupport" 
+                      checked={challenges.lackOfSupport}
                       onChange={handleChallengesChange}
                     />
-                    Interview preparation
+                    Lack of support from schools or career advisors.
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
-                      name="findingOpportunities" 
-                      checked={challenges.findingOpportunities}
+                      name="Uncertainty" 
+                      checked={challenges.Uncertainty}
                       onChange={handleChallengesChange}
                     />
-                    Finding suitable opportunities
+                    Uncertainty about how to start the application process.
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
-                      name="other" 
-                      checked={challenges.other}
+                      name="challengesInPreparing" 
+                      checked={challenges.challengesInPreparing}
                       onChange={handleChallengesChange}
                     />
-                    Other
+                    Challenges in preparing CVs and cover letters.
                   </label>
-                  {challenges.other && (
-                    <textarea
-                      value={otherDetails}
-                      onChange={handleOtherDetailsChange}
-                      className="border-[1px] border-gray-400 px-3 w-[100%] py-3 mt-3 placeholder-gray-400"
-                      placeholder="Please specify..."
-                    ></textarea>
-                  )}
+                  <label className="block mt-2">
+                    <input className="mr-2" 
+                      type="checkbox" 
+                      name="accessibilityIssues" 
+                      checked={challenges.accessibilityIssues}
+                      onChange={handleChallengesChange}
+                    />
+                      Accessibility issues for individuals with disabilities or other barriers.
+                  </label>
+                  <label className="block mt-2">
+                    <input className="mr-2" 
+                      type="checkbox" 
+                      name="highCompetition" 
+                      checked={challenges.highCompetition}
+                      onChange={handleChallengesChange}
+                    />
+                      High competition for popular apprenticeship programs.
+                  </label>
+                  <label className="block mt-2">
+                    <input className="mr-2" 
+                      type="checkbox" 
+                      name="lackOfPrior" 
+                      checked={challenges.lackOfPrior}
+                      onChange={handleChallengesChange}
+                    />
+                      Lack of prior work experience or relevant skills.
+                  </label>
+                  <label className="block mt-2">
+                    <input className="mr-2" 
+                      type="checkbox" 
+                      name="difficultyInStanding" 
+                      checked={challenges.difficultyInStanding}
+                      onChange={handleChallengesChange}
+                    />
+                      Difficulty in standing out in the application process.
+                  </label>
+                  <label className="block mt-2">
+                    <input className="mr-2" 
+                      type="checkbox" 
+                      name="assessmentCentreStage" 
+                      checked={challenges.assessmentCentreStage}
+                      onChange={handleChallengesChange}
+                    />
+                      Assessment Centre Stage
+                  </label>
+                  <label className="block mt-2">
+                    <input className="mr-2" 
+                      type="checkbox" 
+                      name="interviewStage" 
+                      checked={challenges.interviewStage}
+                      onChange={handleChallengesChange}
+                    />
+                      Interview Stage
+                  </label>
                 </div>
               </div>
               {errorMessage && <p>{errorMessage}</p>}
@@ -690,11 +725,13 @@ const handleRatingChange = (event) => {
                 <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
                   Previous
                 </button>{" "}
-                <button 
-                  className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
-                  variant="primary" onClick={handleNext}>
-                  Next
-                </button>
+                <div onClick={handleScrollToTop}>
+                  <button 
+                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                    variant="primary" onClick={handleNext}>
+                    Next
+                  </button>
+                </div>
               </div>
             </div>
           )}
@@ -708,7 +745,7 @@ const handleRatingChange = (event) => {
                 <label className="text-[#1790E8] font-medium">What type of apprenticeships are you interested in?</label>
                 <div className="mt-3">
                   <label className="block">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
                       name="degree" 
                       checked={apprenticeshipTypes.degree}
@@ -717,7 +754,7 @@ const handleRatingChange = (event) => {
                     Degree Apprenticeship
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
                       name="higher" 
                       checked={apprenticeshipTypes.higher}
@@ -726,7 +763,7 @@ const handleRatingChange = (event) => {
                     Higher Apprenticeship
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
                       name="advanced" 
                       checked={apprenticeshipTypes.advanced}
@@ -735,7 +772,7 @@ const handleRatingChange = (event) => {
                     Advanced Apprenticeship
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
                       name="intermediate" 
                       checked={apprenticeshipTypes.intermediate}
@@ -744,7 +781,7 @@ const handleRatingChange = (event) => {
                     Intermediate Apprenticeship
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
                       name="notSure" 
                       checked={apprenticeshipTypes.notSure}
@@ -779,11 +816,13 @@ const handleRatingChange = (event) => {
                 <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
                   Previous
                 </button>{" "}
-                <button 
-                  className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
-                  variant="primary" onClick={handleNext}>
-                  Next
-                </button>
+                <div onClick={handleScrollToTop}>
+                  <button 
+                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                    variant="primary" onClick={handleNext}>
+                    Next
+                  </button>
+                </div>
               </div>
             </div>
           )}
@@ -797,7 +836,7 @@ const handleRatingChange = (event) => {
                 <label className="text-[#1790E8] font-medium">Which resources would be most helpful for you?</label>
                 <div className="mt-3">
                   <label className="block">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
                       name="cvWriting" 
                       checked={resources.cvWriting}
@@ -806,25 +845,25 @@ const handleRatingChange = (event) => {
                     CV writing tips
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
-                      name="interviewPreparation" 
-                      checked={resources.interviewPreparation}
+                      name="lackOfSupport" 
+                      checked={resources.lackOfSupport}
                       onChange={handleResourcesChange}
                     />
                     Interview preparation
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
-                      name="findingOpportunities" 
-                      checked={resources.findingOpportunities}
+                      name="Uncertainty" 
+                      checked={resources.Uncertainty}
                       onChange={handleResourcesChange}
                     />
                     Finding apprenticeship opportunities
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
                       name="networking" 
                       checked={resources.networking}
@@ -833,7 +872,7 @@ const handleRatingChange = (event) => {
                     Networking with professionals
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
                       name="workshops" 
                       checked={resources.workshops}
@@ -842,7 +881,7 @@ const handleRatingChange = (event) => {
                     Workshops and webinars
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
                       name="mentorship" 
                       checked={resources.mentorship}
@@ -851,7 +890,7 @@ const handleRatingChange = (event) => {
                     Mentorship programs
                   </label>
                   <label className="block mt-2">
-                    <input 
+                    <input className="mr-2" 
                       type="checkbox" 
                       name="other" 
                       checked={resources.other}
@@ -884,11 +923,13 @@ const handleRatingChange = (event) => {
                 <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
                   Previous
                 </button>{" "}
-                <button 
-                  className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
-                  variant="primary" onClick={handleNext}>
-                  Next
-                </button>
+                <div onClick={handleScrollToTop}>
+                  <button 
+                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                    variant="primary" onClick={handleNext}>
+                    Next
+                  </button>
+                </div>
               </div>
             </div>
           )}
@@ -950,11 +991,13 @@ const handleRatingChange = (event) => {
                 <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
                   Previous
                 </button>{" "}
-                <button 
-                  className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
-                  variant="primary" onClick={handleNext}>
-                  Next
-                </button>
+                <div onClick={handleScrollToTop}>
+                  <button 
+                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                    variant="primary" onClick={handleNext}>
+                    Next
+                  </button>
+                </div>
               </div>
             </div>
           )}
