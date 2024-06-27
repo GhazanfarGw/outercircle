@@ -444,7 +444,7 @@ const handleRatingChange = (event) => {
               {errorMessage && <p>{errorMessage}</p>}
               <div onClick={handleScrollToTop}>
                 <button 
-                  className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                  className="bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-20 px-14 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" 
                   variant="primary" onClick={handleNext}>
                   Next
                 </button>
@@ -556,12 +556,12 @@ const handleRatingChange = (event) => {
               </div>
               {errorMessage && <p>{errorMessage}</p>}
               <div className="flex justify-center my-16 md:my-20 md:gap-16">
-                <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
+                <button className="flex bg-[#1790E8] items-center shadow-xl rounded-r-lg md:px-14 px-8 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" onClick={handlePrev}>
                   Previous
                 </button>{" "}
                 <div onClick={handleScrollToTop}>
                   <button 
-                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                    className="bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-20 px-14 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" 
                     variant="primary" onClick={handleNext}>
                     Next
                   </button>
@@ -722,12 +722,12 @@ const handleRatingChange = (event) => {
               </div>
               {errorMessage && <p>{errorMessage}</p>}
               <div className="flex justify-center my-16 md:my-20 md:gap-16">
-                <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
+                <button className="flex bg-[#1790E8] items-center shadow-xl rounded-r-lg md:px-14 px-8 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" onClick={handlePrev}>
                   Previous
                 </button>{" "}
                 <div onClick={handleScrollToTop}>
                   <button 
-                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                    className="bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-20 px-14 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" 
                     variant="primary" onClick={handleNext}>
                     Next
                   </button>
@@ -813,12 +813,12 @@ const handleRatingChange = (event) => {
               </div>
               {errorMessage && <p>{errorMessage}</p>}
               <div className="flex justify-center my-16 md:my-20 md:gap-16">
-                <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
+                <button className="flex bg-[#1790E8] items-center shadow-xl rounded-r-lg md:px-14 px-8 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" onClick={handlePrev}>
                   Previous
                 </button>{" "}
                 <div onClick={handleScrollToTop}>
                   <button 
-                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                    className="bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-20 px-14 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" 
                     variant="primary" onClick={handleNext}>
                     Next
                   </button>
@@ -920,12 +920,12 @@ const handleRatingChange = (event) => {
               </div>
               {errorMessage && <p>{errorMessage}</p>}
               <div className="flex justify-center my-16 md:my-20 md:gap-16">
-                <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
+                <button className="flex bg-[#1790E8] items-center shadow-xl rounded-r-lg md:px-14 px-8 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" onClick={handlePrev}>
                   Previous
                 </button>{" "}
                 <div onClick={handleScrollToTop}>
                   <button 
-                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                    className="bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-20 px-14 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" 
                     variant="primary" onClick={handleNext}>
                     Next
                   </button>
@@ -988,12 +988,12 @@ const handleRatingChange = (event) => {
               </div>
               {errorMessage && <p>{errorMessage}</p>}
               <div className="flex justify-center my-16 md:my-20 md:gap-16">
-                <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
+                <button className="flex bg-[#1790E8] items-center shadow-xl rounded-r-lg md:px-14 px-8 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" onClick={handlePrev}>
                   Previous
                 </button>{" "}
                 <div onClick={handleScrollToTop}>
                   <button 
-                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10" 
+                    className="bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-20 px-14 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" 
                     variant="primary" onClick={handleNext}>
                     Next
                   </button>
@@ -1009,7 +1009,7 @@ const handleRatingChange = (event) => {
               </p>
               <div className="mt-10">
                 <label className="block">
-                  <input 
+                  <input className="mr-2"
                     type="checkbox" 
                     name="consent" 
                     checked={consent}
@@ -1018,7 +1018,7 @@ const handleRatingChange = (event) => {
                   I agree to the collection and use of my personal data by OuterCircle for the purpose of receiving support and resources related to apprenticeships.
                 </label>
                 <label className="block mt-2">
-                  <input 
+                  <input className="mr-2"
                     type="checkbox" 
                     name="subscribe" 
                     checked={subscribe}
@@ -1029,12 +1029,12 @@ const handleRatingChange = (event) => {
               </div>
               {errorMessage && <p>{errorMessage}</p>}
               <div className="flex justify-center my-16 md:my-20 md:gap-16">
-                <button className="cool-link text-black md:text-lg text-sm cursor-pointer self-center" onClick={handlePrev}>
+                <button className="flex bg-[#1790E8] items-center shadow-xl rounded-r-lg md:px-14 px-8 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16" onClick={handlePrev}>
                   Previous
                 </button>{" "}            
                   <button
                     value={handleSubmit} 
-                    className="ml-5 text-[#1790E8] md:text-lg text-sm border-4 border-[#1790E8] md:w-64 w-48 items-center p-3 rounded-full block self-end my-10"
+                    className="bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-20 px-14 md:py-4 py-2 text-white text-sm font-semibold mr-4 my-10 md:my-16"
                     type="submit">
                     {loading ? (
                       <div className='flex items-center gap-3 cursor-progress'>
