@@ -22,11 +22,11 @@ export default function Dashboard() {
     <>
       <div id='herosection' className='duration-500 min-h-screen items-center justify-center mx-auto lg:px-10 md:px-10 sm:px-5 px-5 pb-10 overflow-hidden'>
         <div className='lg:flex justify-center mx-auto items-center md:pt-44 overflow-hidden max-w-screen-2xl'>
-          <div className='first items-center align-middle mx-auto md:pt-20 pt-20 w-[35rem]'>
-            <img src='./Main-Circle.png' className='animate-pulse items-center align-middle relative'/>
+          <div className='first items-center align-middle mx-auto lg:pt-32 xl:pt-20 md:pt-20 pt-20'>
+            <img src='./Main-Circle.png' className='w-[35rem] animate-pulse items-center align-middle relative'/>
           </div>
           <div className='text-white md:px-10'>
-            <div className='xl:pt-24 pt-0'>
+            <div className='xl:pt-24 lg:pt-32 pt-0'>
               <h3 className='text-nowrap flex text-white second font-semibold xl:text-6xl lg:text-5xl md:text-5xl text-xl tracking-wider duration-500'>
                 Welcome To OuterCircle
               </h3>
