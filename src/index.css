@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 52px;
+  line-height: 2.8rem;
+  color: #191E28;
+}
+
+h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 28px;
+    line-height: 2.3rem;
+    color: #191E28;
+  }
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.6rem;
+  color: #262D3D;
+}
+
+#herosection {
+  background-image: url(../public/p1080219.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: inherit;
+}
+
+@media (max-width: 480px) {
+  p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 14px;
+    color: #262D3D;
+    line-height: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #herosection {
+    background-image: url(../public/Mobileview/p1080219.jpg);
+  }
+}
+
+#community {
+  background-image: url(../public/Home\ page\ Group\ image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: inherit;
+}
+
+#student {
+  background-image: url(../public/IMG_2423.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: inherit;
+}
+
+@media (max-width: 480px) {
+  #student {
+    background-image: url("../public/Mobileview/Aspiring Apprentices image copy.jpg");
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #student {
+    background-image: url(../public/IMG_2423.jpeg);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #student {
+    background-image: url(../public/IMG_2423.jpeg);
+  }
+}
+
+
+#circlegr {
+  background-image: url(../public/Inperson\ Event\ background\ image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: inherit;
+}
+
+
+#schools {
+  background-image: url(../public/unnamed.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: inherit;
+}
+
+@media (max-width: 480px) {
+  #schools {
+    background-image: url(../public/Mobileview/How\ We\ Help\ schools-colleges.png);
+  }
+}
+
+
+#employers {
+  background-image: url(../public/Inperson\ Event\ background\ image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: inherit;
+}
+
+#testimonialsbg {
+  background-image: url(../public/Group\ Love\ image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: inherit;
+}
+
+@media (max-width: 480px) {
+  #employers {
+    background-image: url(../public/Mobileview/Inperson\ Event\ background\ image.png);
+  }
+}
+
+
+
+#grossroot {
+  background-image: url(../public/Group\ Love\ image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: inherit;
+}
+
+#contactus {
+  background-image: url(../public/shutterstockRF_366175394.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: inherit;
+}
+
+@media (max-width: 480px) {
+  #contactus {
+    background-image: url(../public/Mobileview/shutterstockRF_366175394.jpg);
+  }
+}
+
+#testimonials{
+  background-image: url(../public/Testimonial-Box.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+#herehelp{
+  background-image: url(../public/Main-Circle.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+#event{
+  background-image: url(../public/in-person-event.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+#circlelogo{
+  background-image: url(../public/in-person-event.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: fill;
+}
+
+/* Menu.css */
+.active-link {
+  border-bottom: 4px solid #1790E8; /* Customize the border color and style as needed */
+}
+
+/* Additional styles */
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Preloader.css */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111111; /* Background color for the preloader */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .loader {
+    border: 6px solid #18C4FF; /* Light gray border */
+    border-top: 6px solid #09121C; /* Blue border */
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    animation: spin 3s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* defines the animation */
+@keyframes fadeInUp {
+  from { 
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.first {
+  opacity: 0; 
+  animation: fadeInUp 1s ease-in-out 0s forwards;
+  animation-delay: 0.5s;
+}
+
+.second {
+  opacity: 0; 
+  animation: fadeInUp 1s ease-in-out 0s forwards;
+  animation-delay: 1s;
+}
+
+.third {
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0s forwards;
+  animation-delay: 2s;
+
+}
+
+.fourth {
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0s forwards;
+  animation-delay: 3s;
+}
+  
+.five {
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out 0s forwards;
+  animation-delay: 4s;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border-image: conic-gradient(from 180deg, cyan, magenta) 1;
+  box-shadow: 
+    0 0 15px cyan,
+    0 0 30px cyan,
+    0 0 45px cyan,
+    0 0 60px magenta,
+    0 0 75px magenta,
+    0 0 90px magenta;
+  background-color: transparent;
+}
+
+
+
+/* src/CustomArrows.css */
+.custom-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(68, 0, 255);
+  color: rgb(255, 0, 0);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.custom-arrow svg {
+  fill: rgb(123, 255, 0);
+}
+
+.next-arrow {
+  right: 10px;
+}
+
+.prev-arrow {
+  left: 10px;
+}
+
+/* Positioning the arrows after the dots */
+.slick-dots {
+  position: relative;
+  bottom: 0;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.custom-arrow-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.offer-item {
+  position: relative;
+}
+
+.offer-description {
+  display: none;
+  transition: opacity 0.3s;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.offer-item:hover .offer-description {
+  display: block;
+  opacity: 1;
+}
