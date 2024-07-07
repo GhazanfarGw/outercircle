@@ -16,8 +16,8 @@ export default function Index() {
     <Dashboard/>
     <Offer/>
     <Network/>
-    <Spotlight/>
     <JobSearchBar/>
+    <Spotlight/>
     <Testimonials/>
     <Footer/>
 
