@@ -27,10 +27,36 @@ const JobSearchBar = () => {
     setTimeout(() => {
       // Example job data (simulated)
       const availableJobs = [
-        { id: 1, title: 'Technology', type: 'Technology', level: 'Level 2', location: 'London' },
-        { id: 2, title: 'Engineering & Management', type: 'Engineering & Management', level: 'Level 3', location: 'North East' },
-        { id: 3, title: 'Accounting & Finance', type: 'Accounting & Finance', level: 'Level 4 & 5', location: 'North West' },
-        { id: 4, title: 'Nurse', type: 'Health & Science', level: 'Level 6 & 7', location: 'Yorkshire' },
+        { 
+          id: 1, 
+          logo: './outercircle.png', // Example logo URL
+          title: 'Chartered Managemant Degree Apprenticeship (in person)', 
+          company: 'University of Kent (Employers)',
+          salary: 'N/A',
+          type: 'Bussiness',
+          location: 'London',
+          university:'University of Kent',
+          qualification: 'Chartered Business Managemant (BA/BSc)',
+          requirements:'CCC/AAB A-Level',
+          date: '09/09/2024',
+          deadline: 'TBD',
+          level: 'Level 2' 
+        },
+        { 
+          id: 2, 
+          logo: './outercircle.png', // Example logo URL
+          title: 'Chartered Managemant Degree Apprenticeship (in person)', 
+          company: 'University of Kent (Employers)',
+          salary: 'N/A',
+          type: 'Bussiness',
+          location: 'London',
+          university:'University of Kent',
+          qualification: 'Chartered Business Managemant (BA/BSc)',
+          requirements:'CCC/AAB A-Level',
+          date: '09/09/2024',
+          deadline: 'TBD',
+          level: 'Level 2' 
+        },
         // Add more jobs as needed
       ];
 
@@ -49,15 +75,16 @@ const JobSearchBar = () => {
 
   return (
     <div className="p-4 bg-white shadow-md rounded-md">
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 bg-gradient-to-l from-[#1790E8] to-[#A04FC8] py-3 pb-5 px-8">
         <div>
-          <label className="block text-gray-700">Select Type Filter:</label>
+          <label className="block text-white font-semibold">Select Type</label>
           <select 
             value={type} 
             onChange={handleTypeChange} 
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+            className="w-full mt-1 p-2 border border-[#A04FC8] rounded-md"
           >
-            <option value="">Select Type</option>
+            <option value="" disabled>Select Type</option>
+            <option value="Bussiness">Chartered Managemant</option>
             <option value="Technology">Technology</option>
             <option value="Engineering & Management">Engineering & Management</option>
             <option value="Accounting & Finance">Accounting & Finance</option>
@@ -69,13 +96,13 @@ const JobSearchBar = () => {
           </select>
         </div>
         <div>
-          <label className="block text-gray-700">Select Level Filter:</label>
+          <label className="block text-white font-semibold">Select Level</label>
           <select 
             value={level} 
             onChange={handleLevelChange} 
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+            className="w-full mt-1 p-2 border border-[#A04FC8] rounded-md"
           >
-            <option value="">Select Level</option>
+            <option value="" disabled>Select Level</option>
             <option value="Level 2">Level 2</option>
             <option value="Level 3">Level 3</option>
             <option value="Level 4 & 5">Level 4 & 5 (Higher)</option>
@@ -83,13 +110,13 @@ const JobSearchBar = () => {
           </select>
         </div>
         <div>
-          <label className="block text-gray-700">Select Location Filter:</label>
+          <label className="block text-white font-semibold">Location</label>
           <select 
             value={location} 
             onChange={handleLocationChange} 
-            className="w-full mt-1 p-2 border border-gray-300 rounded-md"
+            className="w-full mt-1 p-2 border border-[#A04FC8] rounded-md"
           >
-            <option value="">Select Location</option>
+            <option value="" disabled>Select Location</option>
             <option value="All">All</option>
             <option value="London">London</option>
             <option value="North East">North East</option>
@@ -104,7 +131,7 @@ const JobSearchBar = () => {
       </div>
       <button 
         onClick={handleSearch} 
-        className={`mt-4 w-full py-2 rounded-md ${isLoading ? 'bg-gray-500 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600 text-white'}`}
+        className={`mt-8 px-20 py-2 rounded-md ${isLoading ? 'bg-gray-500 cursor-not-allowed' : 'bg-gradient-to-l from-[#1790E8] to-[#A04FC8] text-white'}`}
         disabled={isLoading}
       >
         {isLoading ? 'Searching...' : 'Search Jobs'}
@@ -114,16 +141,68 @@ const JobSearchBar = () => {
         <div className="mt-6">
           <h2 className="text-xl font-semibold">Available Jobs:</h2>
           {jobs.length > 0 ? (
-            <ul className="mt-2 space-y-2">
+            <div className="mt-10 items-center md:flex grid md:grid-cols-2 gap-5 justify-between mx-auto">
               {jobs.map(job => (
-                <li key={job.id} className="p-4 border border-gray-300 rounded-md">
-                  <h3 className="text-lg font-medium">{job.title}</h3>
-                  <p className="text-gray-700">Type: {job.type}</p>
-                  <p className="text-gray-700">Level: {job.level}</p>
-                  <p className="text-gray-700">Location: {job.location}</p>
-                </li>
+                <div key={job.id} className="p-4 border border-[#A04FC8] rounded-md text-left md:py-12 py-5">
+                  <div className=''>
+                    <img src={job.logo} alt={`${job.title} logo`} className="md:w-20 w-12" />
+                  </div>
+                  <div className='pt-5'>
+                    <h3 className="md:text-lg font-medium">{job.title}</h3>
+                    <div className='flex items-center gap-2 pt-2'>
+                      <img className='md:w-6 w-5' src='./application_icons/icons8-company-100.png'/>
+                      <p className="text-gray-700 md:pt-0 pt-3 md:text-base text-xs font-semibold">Company:
+                        <span className='ml-2 font-normal'>{job.company}</span></p>
+                    </div>
+                    <div className='flex items-center gap-2 pt-2'>
+                      <img className='md:w-6 w-5' src='./application_icons/icons8-salary-100.png'/>
+                      <p className="text-gray-700 font-semibold md:pt-0 pt-2 md:text-base text-xs">Salary:
+                        <span className='ml-2 font-normal'>{job.salary}</span></p>
+                    </div>
+                    <div className='flex items-center gap-2 pt-2'>
+                      <img className='md:w-6 w-5' src='./application_icons/icons8-type-100.png'/>
+                      <p className="text-gray-700 font-semibold md:pt-0 pt-2 md:text-base text-xs">Type:
+                        <span className='ml-2 font-normal'>{job.type}</span></p>
+                    </div>
+                    <div className='flex items-center gap-2 pt-2'>
+                      <img className='md:w-6 w-5' src='./application_icons/icons8-location-100.png'/>
+                      <p className="text-gray-700 font-semibold md:pt-0 pt-2 md:text-base text-xs">Location:
+                        <span className='ml-2 font-normal'>{job.location}</span></p>
+                    </div>
+                    <div className='flex items-center gap-2 pt-2'>
+                      <img className='md:w-6 w-5' src='./application_icons/icons8-university-100.png'/>
+                      <p className="text-gray-700 font-semibold md:pt-0 pt-2 md:text-base text-xs">University:
+                        <span className='ml-2 font-normal'>{job.university}</span></p>
+                    </div>
+                    <div className='flex items-center gap-2 pt-2'>
+                      <img className='md:w-6 w-5' src='./application_icons/icons8-university-100 (1).png'/>
+                      <p className="text-gray-700 font-semibold md:pt-0 pt-2 md:text-base text-xs">Qualification:
+                        <span className='ml-2 font-normal'>{job.qualification}</span></p>
+                    </div>
+                    <div className='flex items-center gap-2 pt-2'>
+                      <img className='md:w-6 w-5' src='./application_icons/icons8-entry-100.png'/>
+                      <p className="text-gray-700 font-semibold md:pt-0 pt-2 md:text-base text-xs">Entry Requirements:
+                        <span className='ml-2 font-normal'>{job.requirements}</span></p>
+                    </div>
+                    <div className='flex items-center gap-2 pt-2'>
+                      <img className='md:w-6 w-5' src='./application_icons/icons8-time-100.png'/>
+                      <p className="text-gray-700 font-semibold md:pt-0 pt-2 md:text-base text-xs">Start Date:
+                        <span className='ml-2 font-normal'>{job.date}</span></p>
+                    </div>
+                    <div className='flex items-center gap-2 pt-2'>
+                      <img className='md:w-6 w-5' src='./application_icons/icons8-deadline-100.png'/>
+                      <p className="text-gray-700 font-semibold md:pt-0 pt-2 md:text-base text-xs">Application Deadline:
+                        <span className='ml-2 font-normal'>{job.deadline}</span></p>
+                    </div>
+                  </div>
+                  <a href="./">
+                    <span className="md:w-44 md:mt-10 mt-6 text-center flex bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-8 px-20 md:py-4 py-2 text-white text-sm font-semibold mr-4">
+                      Apply Now
+                    </span>
+                  </a>
+                </div>
               ))}
-            </ul>
+            </div>
           ) : (
             <p className="mt-2 text-gray-700">No jobs found matching the selected filters.</p>
           )}
