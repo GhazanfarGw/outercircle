@@ -6,7 +6,6 @@ import Network from './Network';
 import Spotlight from './Spotlight';
 import Testimonials from './Testimonials';
 import Footer from '../headerfooterpre/Footer';
-import JobSearchBar from './JobSearchBar';
 
 
 export default function Index() {
@@ -16,7 +15,6 @@ export default function Index() {
     <Dashboard/>
     <Offer/>
     <Network/>
-    <JobSearchBar/>
     <Spotlight/>
     <Testimonials/>
     <Footer/>
