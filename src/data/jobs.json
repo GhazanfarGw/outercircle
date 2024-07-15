@@ -1,6 +1,0 @@
-[
-    { "id": 1, "title": "Technology", "type": "Technology", "level": "Level 2", "location": "London" },
-    { "id": 2, "title": "Engineering & Management", "type": "Engineering & Management", "level": "Level 3", "location": "North East" },
-    { "id": 3, "title": "Accountant", "type": "Accounting & Finance", "level": "Level 3", "location": "East Midlands" },
-    { "id": 4, "title": "Nurse", "type": "Health & Science", "level": "Level 2", "location": "South East" }
-] 
