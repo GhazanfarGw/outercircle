@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '../headerfooterpre/header';
 import Dashboard from './Dashboard';
-import Expect from './Expect';
 import Help from './help';
 import Event from './event';
 import Ourpost from '../Employers/Ourpost';
@@ -14,7 +13,6 @@ export default function Index() {
     <>
     <Header/>
     <Dashboard/>
-    <Expect/>
     <Help/>
     <Event/>
     <Ourpost/>
