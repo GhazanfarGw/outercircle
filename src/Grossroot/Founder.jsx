@@ -26,7 +26,7 @@ export default function Founder() {
                         - Romario's mission is to empower the next generation of apprentices by providing the knowledge and support necessary for their success. Through OuterCircle, he strives to foster an inclusive and supportive environment where apprentices can thrive.
                     </p>
                     <a 
-                                target="_black" href="https://www.linkedin.com/company/0utercircle?trk=feed_main-feed-card_feed-actor-image" 
+                                target="_black" href="https://www.linkedin.com/in/romario-ellis-1b5037221/" 
                                 className="hover:text-[#1790E8] text-black
                                 items-center text-sm relative h-8 pt-0.5 uppercase duration-200hover:scale-125"
                                 rel="noreferrer">
