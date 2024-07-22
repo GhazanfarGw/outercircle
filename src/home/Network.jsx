@@ -50,11 +50,11 @@ export default function Innumber() {
             </div>
         </div>
     </div>
-    <div className='md:-mt-72 -mt-24 mx-5 md:mx-auto justify-center lg:max-w-6xl md:w-full md:border-4 border-4 border-[#1790E8] my-10'>
+{/*     <div className='md:-mt-72 -mt-24 mx-5 md:mx-auto justify-center lg:max-w-6xl md:w-full md:border-4 border-4 border-[#1790E8] my-10'>
         <video muted autoPlay loop controls playsInline width={1200} height={480}> 
             <source src='./how_we.mp4' type='video/mp4'/>
         </video>
-    </div>
+    </div> */}
 
     </>
   )
