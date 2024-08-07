@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const JobSearchBar = () => {
   const [title, seTitle] = useState('');
   const [level, setLevel] = useState('');
-  const [location, setLocation] = useState('');
+  const [region, setRegion] = useState('');
   const [jobs, setJobs] = useState([]);
   const [showJobs, setShowJobs] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,8 +16,8 @@ const JobSearchBar = () => {
     setLevel(event.target.value);
   };
 
-  const handleLocationChange = (event) => {
-    setLocation(event.target.value);
+  const handleRegionChange = (event) => {
+    setRegion(event.target.value);
   };
 
   const handleSearch = () => {
@@ -984,7 +984,7 @@ const JobSearchBar = () => {
       const filteredJobs = availableJobs.filter(job =>
         (title === '' || job.title === title) &&
         (level === '' || job.level === level) &&
-        (location === '' || job.location === location || location === 'All')
+        (region === '' || job.region === region|| region === 'All')
       );
 
       setJobs(filteredJobs);
@@ -1076,8 +1076,8 @@ const JobSearchBar = () => {
         <div className='text-left'>
           <label className="block text-white font-semibold py-1 md:text-lg text-sm pb-2">Location</label>
           <select 
-            value={location} 
-            onChange={handleLocationChange} 
+            value={region} 
+            onChange={handleRegionChange} 
             className="w-full mt-1 p-2 border border-[#A04FC8] rounded-md"
           >
             <option value="" disabled>Select Location</option>
