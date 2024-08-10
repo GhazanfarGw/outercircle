@@ -36,12 +36,12 @@ export default function Dashboard() {
             </div>
             <div className='md:flex'>
               <div className="flex items-center md:gap-x-5 md:mt-16 pt-8 md:pt-0">
-                <a target="_black" href='https://forms.gle/tqNcGhNhV37ABwQUA' className="flex bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-8 px-5 md:py-4 py-3 text-white text-sm font-semibold mr-4">
+                <a target="_black" href='https://outercircleltd.fillout.com/t/rRwwmpJy4mus' className="flex bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-8 px-5 md:py-4 py-3 text-white text-sm font-semibold mr-4">
                   <span className="ml-2">Aspiring Apprentice Community</span>
                 </a>
               </div>
               <div className="flex items-center md:gap-x-5 md:mt-16 pt-3 md:pt-0">
-                <a target="_black" href='https://forms.gle/5MDSH2AKdwbB9FpAA' className="flex bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-5 px-5 md:py-4 py-3 text-white text-sm font-semibold mr-4">
+                <a target="_black" href='https://outercircleltd.fillout.com/t/fEAzGwSJz8us' className="flex bg-gradient-to-l from-[#1790E8] to-[#A04FC8] items-center shadow-xl rounded-r-lg md:px-5 px-5 md:py-4 py-3 text-white text-sm font-semibold mr-4">
                   <span className="ml-2">Current Apprentice Community</span>
                 </a>
               </div>
