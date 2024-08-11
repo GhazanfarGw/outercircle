@@ -19,7 +19,7 @@ export default function Outreach() {
                         <div className='w-full items-center mx-auto pt-5 px-2 duration-200 border-[#1790E8] border-2 mt-5 md:mt-0'>
                             <img className='hover:scale-105 duration-200 rounded-lg px-3 md:px-0' src='./s01.png' alt='logo'/>
                             <p className='py-5'>
-                                Relatable & Resonating Talks, Addressing Student ConcernsRelatable & Resonating Talks, Addressing Student Concerns.
+                                Relatable & Resonating Talks, Addressing Student Concerns.
                             </p>
                         </div>
                         <div className='w-full items-center mx-auto pt-5 px-2 duration-200 border-[#1790E8] border-2 mt-5 md:mt-0'>
