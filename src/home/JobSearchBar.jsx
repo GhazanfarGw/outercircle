@@ -918,7 +918,7 @@ const JobSearchBar = () => {
           company: 'Morson Group Limited',
           salary: '£18,000.00',
           type: 'Advanced Apprenticeship',
-          region: 'North West England',
+          region: 'North West',
           location: 'Adamson House, Centenary Way, Eccles, M50 1RD',
           university: 'Salford City College',
           qualification: 'Assistant Accountant Level 3 (A level)',
@@ -934,7 +934,7 @@ const JobSearchBar = () => {
           company: 'Greenergy International Limited',
           salary: '£18,500.00',
           type: 'Advanced Apprenticeship',
-          region: 'North West England',
+          region: 'North West',
           location: 'Towers Business Park, Manchester, M20 2LY',
           university: 'The Apprentice Academy Limited',
           qualification: 'Assistant Accountant Level 3 (A level)',
@@ -950,7 +950,7 @@ const JobSearchBar = () => {
           company: 'Oxfordshire County Council',
           salary: '£22,366.00',
           type: 'Advanced Apprenticeship',
-          region: 'South East England',
+          region: 'South East',
           location: 'The Oxford Register Office, 1 Tidmarsh Lane, Oxford, OX1 1NS',
           university: 'Abingdon and Witney College',
           qualification: 'Business Administrator Level 3 (A level)',
@@ -966,7 +966,7 @@ const JobSearchBar = () => {
           company: 'City of London Corporation',
           salary: '£24,470.00',
           type: 'Advanced Apprenticeship',
-          region: 'London (City of London)',
+          region: 'London',
           location: 'Guildhall, Gresham Street, EC2P 2EJ',
           university: 'Common Council of the City of London',
           qualification: 'Business Administrator Level 3 (A level)',
@@ -1088,7 +1088,7 @@ const JobSearchBar = () => {
             <option value="Yorkshire">Yorkshire</option>
             <option value="West Midlands">West Midlands</option>
             <option value="East Midlands">East Midlands</option>
-            <option value="South East">South East</option>
+            <option value="South East">South East England</option>
             <option value="East of England">East of England</option>
           </select>
         </div>
@@ -1124,6 +1124,11 @@ const JobSearchBar = () => {
                       <img className='md:w-6 w-5' src='./application_icons/icons8-type-100.png'/>
                       <p className="text-gray-700 font-semibold md:pt-0 pt-2 md:text-base text-xs">Type:
                         <span className='ml-2 font-normal'>{job.title}</span></p>
+                    </div>
+                    <div className='flex items-center gap-2 pt-2'>
+                      <img className='md:w-6 w-5' src='./application_icons/icons8-location-100.png'/>
+                      <p className="text-gray-700 font-semibold md:pt-0 pt-2 md:text-base text-xs">Region:
+                        <span className='ml-2 font-normal'>{job.region}</span></p>
                     </div>
                     <div className='flex items-center gap-2 pt-2'>
                       <img className='md:w-6 w-5' src='./application_icons/icons8-location-100.png'/>
