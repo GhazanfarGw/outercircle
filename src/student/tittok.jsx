@@ -1,21 +1,42 @@
-// TikTokEmbed.js
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const TikTokEmbed = () => {
+  const [loadError, setLoadError] = useState(false);
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = "https://www.tiktok.com/embed.js";
     script.async = true;
+
+    script.onerror = () => {
+      setLoadError(true);
+    };
+
     document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
+
+  if (loadError) {
+    return <div>Couldn’t load video. Please try again later.</div>;
+  }
 
   return (
     <blockquote 
       className="tiktok-embed" 
       cite="https://www.tiktok.com/@outercirclehub/video/7380763716272409888" 
       data-video-id="7380763716272409888" 
-      style={{ maxWidth: '605px', minWidth: '325px' }}>
-      <section>
+      style={{ 
+        maxWidth: '605px', 
+        minWidth: '325px',
+        margin: '10px auto'
+      }}>
+      <section style={{ 
+        margin: 0, 
+        padding: 0 
+      }}>
         <a 
           target="_blank" 
           title="@outercirclehub" 
